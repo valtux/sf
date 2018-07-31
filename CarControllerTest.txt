@@ -1,0 +1,31 @@
+@isTest
+public class CarControllerTest {
+
+    @isTest
+    public static void CarList_test () {        
+        
+        List<Car__c> carList = new List<Car__c>();
+
+        test.startTest();
+        carList = CarController.CarList();
+        test.stopTest();
+        0042807071
+        System.AssertEquals(4, carList.size());
+    }
+    
+    @isTest
+    public static void queryCarList_test() {
+        
+        CarController cc = new CarController();
+        
+        List<Car__c> autos = new List<Car__c>();
+        
+        test.startTest();
+        autos = cc.queryCarList(1);
+        test.stopTest();
+        
+        System.AssertEquals(1, autos.size());
+    }
+    
+    
+}
